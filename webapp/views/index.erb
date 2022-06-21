@@ -1,0 +1,29 @@
+<h1>Welcome</h1>
+
+<form action="/run" method="post">
+  <label for="action">Action</label><br>
+  <select id="action" name="action">
+    <% @actions.each do |action| %>
+      <option value="<%= action %>"><%= action %></option>
+    <% end %>
+  </select><br>
+
+  <label for="environment">Environment</label><br>
+  <select id="environment" name="environment">
+    <% @environments.each do |environment| %>
+      <option value="<%= environment %>"><%= environment %></option>
+    <% end %>
+  </select><br>
+
+  <label for="interaction">Interaction</label><br>
+  <select id="interaction" name="interaction">
+    <% @interactions.each do |interaction| %>
+      <option value="<%= interaction %>"><%= interaction %></option>
+    <% end %>
+  </select><br>
+
+  <label for="iterations">Iterations</label><br>
+  <input type="number" id="iterations" name="iterations"><br>
+
+  <input type="submit" value="Go">
+</form>
