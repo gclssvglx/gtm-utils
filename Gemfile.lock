@@ -2,6 +2,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     childprocess (4.1.0)
+    fileutils (1.6.0)
     mini_portile2 (2.8.0)
     mustermann (1.1.1)
       ruby2_keywords (~> 0.0.1)
@@ -36,6 +37,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  fileutils
   selenium-webdriver (~> 4.0)
   sinatra
   webdrivers (~> 5.0)

@@ -1,4 +1,4 @@
-<h1>Welcome</h1>
+<h1>GA4 Faker</h1>
 
 <form action="/run" method="post">
   <label for="action">Action</label><br>
@@ -23,7 +23,22 @@
   </select><br>
 
   <label for="iterations">Iterations</label><br>
-  <input type="number" id="iterations" name="iterations"><br>
+  <input type="number" id="iterations" name="iterations" value="<%= @iterations %>"><br>
 
   <input type="submit" value="Go">
 </form>
+
+<style>
+  pre {
+    width: 100%;
+    height: 500px;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+</style>
+
+<pre>
+  <code>
+    <%= @last_run %>
+  </code>
+</pre>

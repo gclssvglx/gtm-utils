@@ -1,19 +1,27 @@
 require "sinatra"
 require "yaml"
+require "ostruct"
+require_relative "../google_tag_manager"
 
 class App < Sinatra::Base
   attr_reader :interactions
 
   get "/" do
-    @actions = %w[fake test]
-    @environments = %w[integration staging]
+    @actions = %w[fake]
+    @environments = %w[integration]
     @interactions = interactions
+    @iterations = 1
+    last_run_file = Dir.glob("log/*").max_by { |f| File.mtime(f) }
+    puts last_run_file
+    @last_run = File.readlines(last_run_file)
 
     erb :index
   end
 
   post "/run" do
-    system("ruby gtm-cli.rb -a #{params[:action]} -e #{params[:environment]} -i #{params[:interaction]} -n #{params[:iterations].to_i}")
+    options = OpenStruct.new(params)
+    gtm = GoogleTagManager.new(options)
+    gtm.run
     redirect "/"
   end
 

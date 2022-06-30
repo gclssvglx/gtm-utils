@@ -5,7 +5,7 @@ require_relative "google_tag_manager.rb"
 class GoogleTagManagerCLI
   Version = "1.0.0"
 
-  ACTIONS = %w[fake test]
+  ACTIONS = %w[fake]
   ENVIRONMENTS = %w[integration staging]
   INTERACTIONS = YAML.load_file("interactions.yml").keys
 

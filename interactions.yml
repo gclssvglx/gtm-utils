@@ -7,3 +7,6 @@ tabs:
   urls:
     - https://www.integration.publishing.service.gov.uk/renew-driving-licence
     - https://www.integration.publishing.service.gov.uk/bank-holidays
+pageviews:
+  urls:
+    - https://www.integration.publishing.service.gov.uk
